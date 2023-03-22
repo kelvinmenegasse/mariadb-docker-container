@@ -1,0 +1,22 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+  mariadb:
+    container_name: mariadb
+    image: mariadb:latest
+    ports:
+      - 3366:3306
+    environment:
+      MYSQL_DATABASE: dbtest
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./host_folder_dump:/home/container_folder_dump
+    networks:
+      - mariadb_network
+
+networks:
+  menegasse_network:
+    external: true

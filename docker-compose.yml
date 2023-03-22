@@ -18,5 +18,5 @@ services:
       - mariadb_network
 
 networks:
-  menegasse_network:
+  mariadb_network:
     external: true
